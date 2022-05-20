@@ -5,20 +5,25 @@
 12821 -> да
 */
 
-Console.WriteLine("Введите число: ");
+void Palindrome(int arg)
+{
+    int absoluteNumber = Math.Abs(arg);
+    int result = 0;
+    for (int i = absoluteNumber; i > 0; i /= 10)
+    {
+        int quot = i % 10;
+        result = result * 10 + quot;
+    }
+    if (result == absoluteNumber)
+    {
+        Console.WriteLine($"Число {arg} - палиндром!");
+    }
+    else
+    {
+        Console.WriteLine($"Число {arg} - не является палиндромом!");
+    }
+}
+Console.WriteLine("Введите пятизначное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
-int absoluteNumber = Math.Abs(number);
-int palindrome = 0;
-for (int i = absoluteNumber; i > 0; i /= 10)
-{
-    int quot = i % 10;
-    palindrome = palindrome  * 10 + quot;
-}
-if (palindrome == absoluteNumber)
-{
-    Console.WriteLine($"Число {number} - палиндром!");
-}
-else
-{
-    Console.WriteLine($"Число {number} - не является палиндромом!");
-}
+Palindrome(number);
+
