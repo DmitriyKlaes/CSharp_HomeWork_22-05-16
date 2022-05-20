@@ -12,9 +12,9 @@ int palindrome = 0;
 for (int i = absoluteNumber; i > 0; i /= 10)
 {
     int quot = i % 10;
-    palindrome = (palindrome + quot) * 10;
+    palindrome = palindrome  * 10 + quot;
 }
-if (palindrome / 10 == absoluteNumber)
+if (palindrome == absoluteNumber)
 {
     Console.WriteLine($"Число {number} - палиндром!");
 }
