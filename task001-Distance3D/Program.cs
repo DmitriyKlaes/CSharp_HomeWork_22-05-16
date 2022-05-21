@@ -13,10 +13,10 @@ void FillArray(int[] array)
 }
 double Distance3D(int[] array1, int[] array2)
 {
-    double a = array2[0] - array1[0];
+    double x = array2[0] - array1[0];
     double y = array2[1] - array1[1];
     double z = array2[2] - array1[2];
-    double result = Math.Sqrt((a * a) + (y * y) + (z * z));
+    double result = Math.Sqrt((x * x) + (y * y) + (z * z));
     return result;
 }
 int[] arrayA = new int[3];
@@ -26,4 +26,6 @@ FillArray(arrayA);
 System.Console.WriteLine("Введите коордиты точки B (X : Y : Z):");
 FillArray(arrayB);
 double result = Distance3D(arrayA, arrayB);
-Console.WriteLine("Расстояние между точками A и B и Z равняется: " + Math.Round(result, 2));
+string stringArrayA = string.Join(":", arrayA);
+string stringArrayB = string.Join(":", arrayB);
+Console.WriteLine($"Расстояние между точками A [{stringArrayA}] и B [{stringArrayB}] в 3D пространстве равняется: " + Math.Round(result, 2));
